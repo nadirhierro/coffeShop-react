@@ -1,0 +1,22 @@
+.navi {
+  background-color: rgb(169, 177, 123) !important ;
+  &__logo {
+    width: 8rem;
+    height: auto;
+  }
+  &__links {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    font-family: "Open Sans", sans-serif;
+    font-weight: bold;
+    a {
+      color: #245e64 !important;
+      &:hover {
+        transition: 0.2s;
+        transform: skewX(-10deg);
+        color: #3f422e !important;
+      }
+    }
+  }
+}

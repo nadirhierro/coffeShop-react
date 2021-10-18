@@ -3,9 +3,9 @@ import cartIcon from "../../assets/icons/shopping-cart.png";
 
 function CartWidget() {
   return (
-    <a className="carritoIcon">
+    <div className="carritoIcon">
       <img src={cartIcon} alt="Icono carrito" />
-    </a>
+    </div>
   );
 }
 

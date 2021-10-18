@@ -1,0 +1,19 @@
+.item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  &__title {
+    color: red;
+    font-size: 20px;
+  }
+  &__description {
+    font-size: 14px;
+  }
+  &__price {
+    font-size: 16px;
+  }
+  &__picture {
+    margin: auto;
+  }
+}

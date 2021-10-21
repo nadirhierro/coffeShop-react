@@ -8,21 +8,11 @@ function ItemCount({ stock, initial, onAdd }) {
   const onIncrease = function () {
     if (count + 1 <= stock) {
       setCount(count + 1);
-    } else if (count === stock) {
-      setPasado(true);
-      setTimeout(() => {
-        setPasado(false);
-      }, 1000);
     }
   };
   const onDecrease = function () {
     if (count - 1 > 0) {
       setCount(count - 1);
-    } else if (count === 1) {
-      setCorto(true);
-      setTimeout(() => {
-        setCorto(false);
-      }, 1000);
     }
   };
   return (

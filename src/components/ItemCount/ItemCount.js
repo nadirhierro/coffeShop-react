@@ -5,8 +5,6 @@ import { faMinus, faPlus } from "@fortawesome/free-solid-svg-icons";
 
 function ItemCount({ stock, initial, onAdd }) {
   const [count, setCount] = useState(parseInt(initial));
-  const [pasado, setPasado] = useState(false);
-  const [corto, setCorto] = useState(false);
   const onIncrease = function () {
     if (count + 1 <= stock) {
       setCount(count + 1);
@@ -50,16 +48,6 @@ function ItemCount({ stock, initial, onAdd }) {
         <span className="itemCount__quantity__stock">
           Hay {stock} unidades disponibles
         </span>
-        {pasado === true && (
-          <span className="itemCount__notification--max">
-            Actualmente tenemos en stock {stock} unidades de este producto
-          </span>
-        )}
-        {corto === true && (
-          <span className="itemCount__notification--min">
-            ¡No puedes seleccionar menos de 1 unidad!
-          </span>
-        )}
       </div>
     </div>
   );

@@ -6,7 +6,7 @@ function Item({ item }) {
     console.log(`Agregaste ${item.title} al carrito`);
   };
   return (
-    <div className="item col-2">
+    <div className="item col-md-2">
       <h3 className="item__title">{item.title}</h3>
       <img
         src={item.pictureUrl}

@@ -1,4 +1,6 @@
 .itemCount {
+  font-family: "Open Sans", sans-serif;
+  width: 100%;
   padding: 1rem 0;
   display: flex;
   flex-direction: column;
@@ -19,6 +21,17 @@
       &:focus {
         box-shadow: none;
       }
+    }
+  }
+  &__quantity {
+    background-color: rgb(97, 81, 81);
+    bottom: 1.5rem;
+    left: 1.5rem;
+    &--max {
+      padding: 1rem;
+    }
+    &--min {
+      padding: 1rem;
     }
   }
 }

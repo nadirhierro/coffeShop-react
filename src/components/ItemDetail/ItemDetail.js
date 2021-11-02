@@ -1,5 +1,6 @@
 import "./ItemDetail.scss";
 import ItemCount from "../ItemCount/ItemCount";
+import { Link } from "react-router-dom";
 
 function ItemDetail({ item }) {
   const onAdd = function () {
@@ -25,6 +26,11 @@ function ItemDetail({ item }) {
         </p>
         <span className="itemDetail__details__price">$ {item.price}</span>
         <ItemCount stock={item.stock} initial="1" onAdd={onAdd} />
+      </div>
+      <div className="col-12 d-flex justify-content-center p-2">
+        <Link to={"/"} className="btn itemDetail__volver">
+          Volver a la tienda
+        </Link>
       </div>
     </div>
   );

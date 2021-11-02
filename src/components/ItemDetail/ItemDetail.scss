@@ -34,4 +34,17 @@
       text-align: center;
     }
   }
+  &__volver {
+    width: 20vh;
+    font-weight: bold;
+    font-size: 18px;
+    background-color: rgb(73, 76, 54);
+    color: black;
+    border-radius: 0.25rem;
+    &:hover {
+      background-color: rgb(24, 25, 18) !important;
+      color: rgb(169, 172, 131) !important;
+      transform: skewX(-15deg);
+    }
+  }
 }

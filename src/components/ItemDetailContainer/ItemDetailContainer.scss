@@ -1,3 +1,26 @@
 .itemDetailContainer {
   font-family: "Open Sans", sans-serif;
+  .loader,
+  .error {
+    height: 4rem;
+  }
+  &__error {
+    padding: 2rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .btn {
+      width: 20vh;
+      font-weight: bold;
+      font-size: 18px;
+      background-color: rgb(73, 76, 54);
+      color: black;
+      border-radius: 0.25rem;
+      &:hover {
+        background-color: rgb(24, 25, 18) !important;
+        color: rgb(169, 172, 131) !important;
+        transform: skewX(-15deg);
+      }
+    }
+  }
 }

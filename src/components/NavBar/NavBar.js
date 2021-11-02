@@ -37,6 +37,9 @@ function NavBar() {
                 className="dropdown-menu"
                 aria-labelledby="dropdownMenuButton"
               >
+                <Link to={"/category/destacados"} className="dropdown-item">
+                  Destacados
+                </Link>
                 <Link to={"/category/guitarras"} className="dropdown-item">
                   Guitarras
                 </Link>

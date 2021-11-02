@@ -8,7 +8,7 @@ import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailCont
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={"coffeShop-react"}>
       <Navbar />
       <Hero />
       <Switch>
@@ -18,7 +18,7 @@ function App() {
         <Route exact path="/category/:categoryId">
           <ItemListContainer />
         </Route>
-        <Route path="/item/:itemId">
+        <Route exact path="/item/:itemId">
           <ItemDetailContainer />
         </Route>
         <Route path="*">

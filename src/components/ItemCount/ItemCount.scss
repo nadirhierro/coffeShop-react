@@ -8,7 +8,7 @@
   align-items: center;
   gap: 1rem;
   &__counter {
-    width: 80%;
+    width: 40%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -20,6 +20,19 @@
       padding: 0;
       &:focus {
         box-shadow: none;
+      }
+    }
+  }
+  &__addCart {
+    &__button {
+      font-size: 20px;
+      background-color: rgb(73, 76, 54);
+      color: black;
+      border-radius: 0.25rem;
+      &:hover {
+        background-color: rgb(24, 25, 18) !important;
+        color: rgb(169, 172, 131) !important;
+        transform: skewX(-15deg);
       }
     }
   }

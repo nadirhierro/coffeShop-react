@@ -27,10 +27,7 @@ function ItemCount({ stock, initial, onAdd }) {
         </button>
       </div>
       <div className="itemCount__addCart">
-        <button
-          onClick={onAdd}
-          className="btn btn-primary rounded-pill itemCount__button__add"
-        >
+        <button onClick={onAdd} className="btn itemCount__addCart__button">
           Agregar al Carrito
         </button>
       </div>

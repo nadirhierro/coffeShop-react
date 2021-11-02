@@ -1,46 +1,47 @@
 import "./ItemListContainer.scss";
-import ItemList from "../ItemList/ItemList";
 import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+import ItemList from "../ItemList/ItemList";
+import data from "../data/data.json";
 
 function ItemListContainer() {
   const [productos, setProductos] = useState([]);
+  const categorias = ["guitarras", "bajos", "teclados", "baterias", "estudio"];
+  let { categoryId } = useParams();
   useEffect(() => {
-    const data = [
-      {
-        id: 1,
-        title: "Café Colombia Guanes",
-        description: "Castilla Caturra Typica y Maragogipe",
-        price: 125,
-        stock: 5,
-        pictureUrl: "./assets/products/1.jpg",
-      },
-      {
-        id: 2,
-        title: "Café Blend Brasil Colombia",
-        description: "Topazio Castilla Caturra Typica y Maragogipe",
-        price: 122,
-        stock: 3,
-        pictureUrl: "./assets/products/2.jpg",
-      },
-    ];
+    setProductos(undefined);
     const task = new Promise((resolve, reject) => {
       setTimeout(() => {
-        resolve(data);
+        resolve(data.JSON);
       }, 2000);
     });
     task.then((res) => {
-      setProductos(data);
+      if (categoryId !== undefined) {
+        setProductos(
+          data.filter((producto) => producto.category === categoryId)
+        );
+      } else {
+        setProductos(data.filter((producto) => producto.destacado === "si"));
+      }
     });
-  }, []);
-  return (
-    <>
-      <div className="container-fluid itemListContainer">
-        <div className="row gap-5">
-          <ItemList items={productos} />
+  }, [categoryId]);
+  if (categorias.indexOf(categoryId) >= 0 || categoryId === undefined) {
+    return (
+      <>
+        <div className="container-fluid itemListContainer">
+          <div className="row justify-content-center">
+            {productos ? (
+              <ItemList items={productos} />
+            ) : (
+              <h4 className="loader">Cargando...</h4>
+            )}
+          </div>
         </div>
-      </div>
-    </>
-  );
+      </>
+    );
+  } else {
+    return <h1>¡Página no encontrada!</h1>;
+  }
 }
 
 export default ItemListContainer;

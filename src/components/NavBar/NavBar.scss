@@ -1,5 +1,5 @@
 .navi {
-  background-color: rgb(169, 177, 123) !important ;
+  background-color: rgba(73, 76, 54, 0.97) !important ;
   &__logo {
     width: 8rem;
     height: auto;
@@ -9,13 +9,17 @@
     display: flex;
     justify-content: space-around;
     font-family: "Open Sans", sans-serif;
-    font-weight: bold;
-    a {
-      color: #245e64 !important;
+    &__link,
+    .dropdown__btn {
+      color: rgb(169, 172, 131) !important;
+      font-weight: bold !important;
       &:hover {
-        transition: 0.2s;
         transform: skewX(-10deg);
-        color: #3f422e !important;
+        background-color: rgb(24, 25, 18) !important;
+        transition: 0.4s;
+      }
+      &:focus {
+        color: rgb(169, 172, 131);
       }
     }
   }

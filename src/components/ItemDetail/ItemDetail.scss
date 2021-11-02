@@ -1,0 +1,37 @@
+.itemDetail {
+  padding: 2rem 5rem;
+  justify-content: center;
+  justify-items: center;
+  &__imgContainer {
+    position: relative;
+    padding-top: 100%;
+    @media (min-width: 992px) {
+      padding-top: 0;
+    }
+    img {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      margin: auto;
+      max-width: 100%;
+      max-height: 100%;
+    }
+  }
+  &__details {
+    display: flex;
+    flex-direction: column;
+    &__title {
+      text-align: center;
+      font-size: 32px;
+    }
+    &__description {
+      font-size: 20px;
+    }
+    &__price {
+      font-size: 28px;
+      text-align: center;
+    }
+  }
+}

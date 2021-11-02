@@ -1,21 +1,21 @@
 import "./Item.scss";
-import ItemCount from "../ItemCount/ItemCount";
+import { Link } from "react-router-dom";
 
 function Item({ item }) {
-  const onAdd = function () {
-    console.log(`Agregaste ${item.title} al carrito`);
-  };
   return (
-    <div className="item col-md-2">
+    <div className="col-12 col-sm-6 col-lg-4 col-xl-2 item">
+      <div className="item__image">
+        <img
+          src={require(`../../assets/products/${item.id}.jpg`).default}
+          alt={item.title}
+          className="img-fluid"
+        />
+      </div>
       <h3 className="item__title">{item.title}</h3>
-      <img
-        src={item.pictureUrl}
-        className="item__picture"
-        alt={item.title}
-      ></img>
-      <h4 className="item__description">{item.description}</h4>
       <span className="item__price">$ {item.price}</span>
-      <ItemCount stock={item.stock} initial="1" onAdd={onAdd} />
+      <Link to={`/item/${item.id}`} className="item__verProducto">
+        Ver producto
+      </Link>
     </div>
   );
 }

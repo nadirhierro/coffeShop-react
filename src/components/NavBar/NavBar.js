@@ -1,14 +1,15 @@
 import "./NavBar.scss";
-import logoLarge from "../../assets/logos/logo_large.png";
+import logoLarge from "../../assets/logos/logo_white_large.png";
 import CartWidget from "../CartWidget/CartWidget";
+import { Link } from "react-router-dom";
 
 function NavBar() {
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light navi">
       <div className="container-fluid">
-        <a className="navbar-brand" href="/#">
+        <Link className="navbar-brand" to={"/"}>
           <img src={logoLarge} className="navi__logo" alt="logo" />
-        </a>
+        </Link>
         <button
           className="navbar-toggler"
           type="button"
@@ -22,16 +23,41 @@ function NavBar() {
         </button>
         <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div className="navbar-nav navi__links">
-            <a className="nav-link" aria-current="page" href="/#">
-              Tienda
-            </a>
-            <a className="nav-link" href="/#">
-              Novedades
-            </a>
-            <a className="nav-link" href="/#">
+            <div className="dropdown">
+              <button
+                className="btn dropdown__btn"
+                type="button"
+                id="dropdownMenuButton1"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Categorias
+              </button>
+              <div
+                className="dropdown-menu"
+                aria-labelledby="dropdownMenuButton"
+              >
+                <Link to={"/category/guitarras"} className="dropdown-item">
+                  Guitarras
+                </Link>
+                <Link to={"/category/bajos"} className="dropdown-item">
+                  Bajos
+                </Link>
+                <Link to={"/category/teclados"} className="dropdown-item">
+                  Teclados
+                </Link>
+                <Link to={"/category/baterias"} className="dropdown-item">
+                  Baterias
+                </Link>
+                <Link to={"/category/estudio"} className="dropdown-item">
+                  Estudio
+                </Link>
+              </div>
+            </div>
+            <a className="nav-link navi__links__link btn" href="/#">
               Sobre Nosotros
             </a>
-            <a className="nav-link" href="/#">
+            <a className="nav-link navi__links__link btn" href="/#">
               Contacto
             </a>
             <CartWidget />

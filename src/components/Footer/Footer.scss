@@ -1,0 +1,32 @@
+.footer {
+  background-color: rgb(73, 76, 54);
+  color: rgb(169, 172, 131);
+}
+.footerFlex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem 0 2rem;
+}
+.footerLogo {
+  padding: 0 0 1rem;
+  width: 20rem;
+}
+.copyright {
+  font-size: 1rem;
+  font-weight: bold;
+  a {
+    text-decoration: none;
+    color: rgb(169, 172, 131) !important;
+  }
+  @media (min-width: 768px) {
+    & {
+      font-size: 0.5rem;
+    }
+  }
+  @media (min-width: 992px) {
+    & {
+      font-size: 1rem;
+    }
+  }
+}

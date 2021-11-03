@@ -2,7 +2,6 @@ import "./ItemListContainer.scss";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import ItemList from "../ItemList/ItemList";
-import data from "../data/data.json";
 
 // mis productos a mostrar comienza siendo un array vacío
 // declaro las categorias en un array de strings
@@ -25,24 +24,23 @@ function ItemListContainer() {
     "estudio",
   ];
   let { categoryId } = useParams();
+
   useEffect(() => {
     setProductos(undefined);
     console.log(categoryId);
-    const task = new Promise((resolve, reject) => {
-      setTimeout(() => {
-        resolve(data.JSON);
-      }, 2000);
-    });
-    task.then((res) => {
-      if (categoryId !== undefined && categoryId !== "destacados") {
-        setProductos(
-          data.filter((producto) => producto.category === categoryId)
-        );
-      } else {
-        setProductos(data.filter((producto) => producto.destacado === "si"));
-      }
-    });
+    fetch("https://api.npoint.io/8a23ab7dd9406e0115d4/")
+      .then((response) => response.json())
+      .then((data) => {
+        if (categoryId !== undefined && categoryId !== "destacados") {
+          setProductos(
+            data.filter((producto) => producto.category === categoryId)
+          );
+        } else {
+          setProductos(data.filter((producto) => producto.destacado === "si"));
+        }
+      });
   }, [categoryId]);
+
   if (categorias.indexOf(categoryId) >= 0 || categoryId === undefined) {
     return (
       <>

@@ -1,7 +1,7 @@
 import "./ItemList.scss";
 import Item from "../Item/Item";
 
-function ItemList({ items }) {
+export default function ItemList({ items }) {
   return (
     <>
       {items.map((item) => (
@@ -10,5 +10,3 @@ function ItemList({ items }) {
     </>
   );
 }
-
-export default ItemList;

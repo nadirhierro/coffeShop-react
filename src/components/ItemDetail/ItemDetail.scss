@@ -34,6 +34,22 @@
       text-align: center;
     }
   }
+  &__finalizar {
+    margin-top: 1rem;
+    display: flex;
+    align-self: center;
+    text-align: center;
+    font-weight: bold;
+    font-size: 18px;
+    background-color: rgb(73, 76, 54);
+    color: black;
+    border-radius: 0.25rem;
+    &:hover {
+      background-color: rgb(24, 25, 18) !important;
+      color: rgb(169, 172, 131) !important;
+      transform: skewX(-15deg);
+    }
+  }
   &__volver {
     width: 20vh;
     font-weight: bold;
@@ -46,5 +62,11 @@
       color: rgb(169, 172, 131) !important;
       transform: skewX(-15deg);
     }
+  }
+  &__inCart {
+    text-align: center;
+    background-color: rgb(73, 76, 54);
+    color: black;
+    transform: skewX(-15deg);
   }
 }

@@ -3,8 +3,9 @@ import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMinus, faPlus } from "@fortawesome/free-solid-svg-icons";
 
-function ItemCount({ stock, initial, onAdd }) {
+export default function ItemCount({ stock, initial, onAdd }) {
   const [count, setCount] = useState(parseInt(initial));
+
   const onIncrease = function () {
     if (count + 1 <= stock) {
       setCount(count + 1);
@@ -15,6 +16,11 @@ function ItemCount({ stock, initial, onAdd }) {
       setCount(count - 1);
     }
   };
+  const handleClick = function (event) {
+    event.stopPropagation();
+    onAdd(count);
+  };
+
   return (
     <div className="itemCount">
       <div className="itemCount__counter">
@@ -27,8 +33,11 @@ function ItemCount({ stock, initial, onAdd }) {
         </button>
       </div>
       <div className="itemCount__addCart">
-        <button onClick={onAdd} className="btn itemCount__addCart__button">
-          Agregar al Carrito
+        <button
+          onClick={handleClick}
+          className="btn itemCount__addCart__button"
+        >
+          Agregar {count} unidad/es al Carrito
         </button>
       </div>
       <div className="itemCount__quantity">
@@ -39,5 +48,3 @@ function ItemCount({ stock, initial, onAdd }) {
     </div>
   );
 }
-
-export default ItemCount;

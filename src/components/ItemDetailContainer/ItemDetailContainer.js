@@ -4,14 +4,14 @@ import { useParams, Link } from "react-router-dom";
 import ItemDetail from "../ItemDetail/ItemDetail";
 
 // mi item empieza siendo undefined
-// empiezo primero recuperando mi data, una vez la tengo, me fijo (getItem) si existe producto con el id del params
+// empiezo primero haciendo fetch mi data, una vez la tengo, me fijo (getItem) si existe producto con el id del params
 // si existe el producto, lo seteo en item
 // si no existe el producto, agarro mi estado existe y le asigno un 0 (falsy)
 // uso el estado existe en 1 (truesy) mientras busco el producto, para que figure el loader de cargando
 // una vez se sabe el producto, se lo renderiza sino
 // una vez se sabe que no hay producto, se renderiza el error
 
-function ItemDetailContainer() {
+export default function ItemDetailContainer() {
   const [item, setItem] = useState(undefined);
   const [existe, setExiste] = useState(1);
   let { itemId } = useParams();
@@ -49,5 +49,3 @@ function ItemDetailContainer() {
     </div>
   );
 }
-
-export default ItemDetailContainer;

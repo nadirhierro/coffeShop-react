@@ -1,11 +1,23 @@
 import "./ItemDetail.scss";
 import ItemCount from "../ItemCount/ItemCount";
+import { useCart } from "../../contexts/CartContext";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 
-function ItemDetail({ item }) {
-  const onAdd = function () {
-    console.log(`Agregaste ${item.title} al carrito`);
+export default function ItemDetail({ item }) {
+  const [choosed, setChoosed] = useState(false);
+  const [selled, setSelled] = useState(false);
+
+  const cart = useCart();
+
+  const onAdd = function (quantity) {
+    const vendido = cart.addItem(item, quantity);
+    setChoosed(true);
+    if (vendido) {
+      setSelled(true);
+    }
   };
+
   return (
     <div className="row itemDetail">
       <div className="col-12 col-md-6 itemDetail__imgContainer">
@@ -25,7 +37,15 @@ function ItemDetail({ item }) {
           mollitia! Exercitationem accusantium nam suscipit!
         </p>
         <span className="itemDetail__details__price">$ {item.price}</span>
-        <ItemCount stock={item.stock} initial="1" onAdd={onAdd} />
+        {!choosed ? (
+          <ItemCount stock={item.stock} initial="1" onAdd={onAdd} />
+        ) : selled ? (
+          <Link to="/cart" className="btn itemDetail__finalizar">
+            Finalizar compra
+          </Link>
+        ) : (
+          <h3 className="itemDetail__inCart">Ya tenías este producto!</h3>
+        )}
       </div>
       <div className="col-12 d-flex justify-content-center p-2">
         <Link to={"/"} className="btn itemDetail__volver">
@@ -35,4 +55,3 @@ function ItemDetail({ item }) {
     </div>
   );
 }
-export default ItemDetail;

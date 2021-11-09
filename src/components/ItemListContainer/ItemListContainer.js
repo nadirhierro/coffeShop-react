@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import ItemList from "../ItemList/ItemList";
 
-// mis productos a mostrar comienza siendo un array vacío
+// mis productos a mostrar comienza siendo undefined
 // declaro las categorias en un array de strings
 // categoryId es el param del router
 // comienzo dejando productos en undefined para que mientras se regenere el array para la categoría, dejo el mensaje de cargando
@@ -13,7 +13,7 @@ import ItemList from "../ItemList/ItemList";
 // si categoryId es una categoría o es undefined ("/") entonces renderizo los productos una vez estén listos
 // si categoryId no es una categoría entonces renderizo que la página no fue encontrada
 
-function ItemListContainer() {
+export default function ItemListContainer() {
   const [productos, setProductos] = useState(undefined);
   const categorias = [
     "destacados",
@@ -27,7 +27,6 @@ function ItemListContainer() {
 
   useEffect(() => {
     setProductos(undefined);
-    console.log(categoryId);
     fetch("https://api.npoint.io/8a23ab7dd9406e0115d4/")
       .then((response) => response.json())
       .then((data) => {
@@ -59,5 +58,3 @@ function ItemListContainer() {
     return <h4 className="text-center p-5">¡Página no encontrada!</h4>;
   }
 }
-
-export default ItemListContainer;

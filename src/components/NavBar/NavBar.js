@@ -3,7 +3,7 @@ import logoLarge from "../../assets/logos/logo_white_large.png";
 import CartWidget from "../CartWidget/CartWidget";
 import { Link } from "react-router-dom";
 
-function NavBar() {
+export default function NavBar() {
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light navi">
       <div className="container-fluid">
@@ -70,5 +70,3 @@ function NavBar() {
     </nav>
   );
 }
-
-export default NavBar;

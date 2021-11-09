@@ -1,6 +1,7 @@
 import "./Footer.scss";
 import footerLogo from "../../assets/logos/logo_white_large.png";
-function Footer() {
+
+export default function Footer() {
   return (
     <footer className="footer">
       <div className="container-fluid">
@@ -28,5 +29,3 @@ function Footer() {
     </footer>
   );
 }
-
-export default Footer;

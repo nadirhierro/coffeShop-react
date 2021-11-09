@@ -1,7 +1,7 @@
 import "./Item.scss";
 import { Link } from "react-router-dom";
 
-function Item({ item }) {
+export default function Item({ item }) {
   return (
     <div className="col-12 col-sm-6 col-lg-4 col-xl-2 item">
       <div className="item__image">
@@ -19,5 +19,3 @@ function Item({ item }) {
     </div>
   );
 }
-
-export default Item;

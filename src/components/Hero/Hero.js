@@ -1,7 +1,8 @@
 import "./Hero.scss";
 import fondoHero from "../../assets/heroFondo.jpg";
 import logoWhiteLarge from "../../assets/logos/logo_white_large.png";
-function Hero() {
+
+export default function Hero() {
   return (
     <>
       <div
@@ -42,5 +43,3 @@ function Hero() {
     </>
   );
 }
-
-export default Hero;

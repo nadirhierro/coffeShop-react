@@ -3,6 +3,7 @@ import ItemCount from "../ItemCount/ItemCount";
 import { useCart } from "../../contexts/CartContext";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import numberWithCommas from "../../js/numberWithCommas";
 
 export default function ItemDetail({ item }) {
   const [choosed, setChoosed] = useState(false);
@@ -36,7 +37,9 @@ export default function ItemDetail({ item }) {
           atque in excepturi blanditiis praesentium ullam laboriosam nobis
           mollitia! Exercitationem accusantium nam suscipit!
         </p>
-        <span className="itemDetail__details__price">$ {item.price}</span>
+        <span className="itemDetail__details__price">
+          $ {numberWithCommas(item.price)}
+        </span>
         {!choosed ? (
           <ItemCount stock={item.stock} initial="1" onAdd={onAdd} />
         ) : selled ? (

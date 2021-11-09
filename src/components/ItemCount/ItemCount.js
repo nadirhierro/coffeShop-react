@@ -42,7 +42,7 @@ export default function ItemCount({ stock, initial, onAdd }) {
       </div>
       <div className="itemCount__quantity">
         <span className="itemCount__quantity__stock">
-          Hay {stock} unidades disponibles
+          Hay {stock} unidad/es disponibles
         </span>
       </div>
     </div>

@@ -5,8 +5,9 @@ const CartContext = createContext();
 export const useCart = () => useContext(CartContext);
 
 let initialState = undefined;
-if (JSON.parse(localStorage.getItem("cart"))) {
-  initialState = JSON.parse(localStorage.getItem("cart"));
+let storageCart = JSON.parse(localStorage.getItem("cart"));
+if (storageCart) {
+  initialState = storageCart;
 } else {
   initialState = { items: [], quantity: 0, total: 0 };
 }

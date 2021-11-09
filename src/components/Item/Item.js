@@ -1,5 +1,6 @@
 import "./Item.scss";
 import { Link } from "react-router-dom";
+import numberWithCommas from "../../js/numberWithCommas";
 
 export default function Item({ item }) {
   return (
@@ -12,7 +13,7 @@ export default function Item({ item }) {
         />
       </div>
       <h3 className="item__title">{item.title}</h3>
-      <span className="item__price">$ {item.price}</span>
+      <span className="item__price">$ {numberWithCommas(item.price)}</span>
       <Link to={`/item/${item.id}`} className="item__verProducto">
         Ver producto
       </Link>

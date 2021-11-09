@@ -4,6 +4,7 @@ const CartContext = createContext();
 
 export const useCart = () => useContext(CartContext);
 
+// initialState recuperado del sessionStorage
 let initialState = undefined;
 let storageCart = JSON.parse(sessionStorage.getItem("cart"));
 if (storageCart) {
@@ -12,6 +13,13 @@ if (storageCart) {
   initialState = { items: [], quantity: 0, total: 0 };
 }
 
+// CartProvider con state cart, guarda en el storage cada vez que hay un cambio en dicho state
+// métodos: isInCart, devuelve true si el item está en carrito, false si no
+// addItem: tiene lógica para no aceptar duplicados, aunque cuando se carga el ItemDetail, primero se fija si el producto está o no
+// entonces ya desde el ItemDetail no va a dejar apretar el botón de agregar si es que el producto está
+// removeItem: quita el producto del cart
+// clear: deja el carrito en 0
+
 export default function CartProvider({ children }) {
   const [cart, setCart] = useState(initialState);
 
@@ -19,12 +27,16 @@ export default function CartProvider({ children }) {
     sessionStorage.setItem("cart", JSON.stringify(cart));
   }, [cart]);
 
-  const findItem = function (itemId) {
-    return cart.items.find((item) => item.id === itemId);
+  const isInCart = function (itemId) {
+    if (cart.items.find((item) => item.id === itemId)) {
+      return true;
+    } else {
+      return false;
+    }
   };
 
   const addItem = function (itemToAdd, quantityToAdd) {
-    if (cart.items.some((item) => item.id === itemToAdd.id)) {
+    if (isInCart(itemToAdd.id)) {
       return false;
     } else {
       setCart({
@@ -45,7 +57,7 @@ export default function CartProvider({ children }) {
   };
 
   const removeItem = function (itemId) {
-    let itemInCart = findItem(itemId);
+    let itemInCart = cart.items.find((item) => item.id === itemId);
     let itemQuantity = itemInCart.quantity;
     setCart({
       items: cart.items.filter((item) => item.id !== itemId),
@@ -55,12 +67,12 @@ export default function CartProvider({ children }) {
   };
 
   const clear = function () {
-    setCart([]);
+    setCart({ items: [], quantity: 0, total: 0 });
   };
 
   return (
     <CartContext.Provider
-      value={{ cart, findItem, addItem, removeItem, clear }}
+      value={{ cart, isInCart, addItem, removeItem, clear }}
     >
       {children}
     </CartContext.Provider>

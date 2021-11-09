@@ -3,6 +3,11 @@ import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMinus, faPlus } from "@fortawesome/free-solid-svg-icons";
 
+// ItemCount con state de count
+// onIncrease y onDecrease con lógica para no pasarse del stock ni bajar de 1
+// handleClick gestiona el onAdd, que pasa el count para luego poder vender el producto
+// onAdd se encuentra en ItemDetail
+
 export default function ItemCount({ stock, initial, onAdd }) {
   const [count, setCount] = useState(parseInt(initial));
 

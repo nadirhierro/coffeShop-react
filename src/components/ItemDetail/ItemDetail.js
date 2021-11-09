@@ -5,14 +5,19 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import numberWithCommas from "../../js/numberWithCommas";
 
+// cada vez que cambia el item, se chequea si el mismo ya se encuentra en el carrito
+// si está en el carrito, no se muestra el ItemCount, sino que se muestra mensaje de producto en carrito
+// también se muestra botones de finalizar compra y quitar producto del carrito
+// onAdd intenta vender el producto, si se vende, se marca como vendido, sino no se hace nada
+// el handleRemove gestiona el removeItem
+
 export default function ItemDetail({ item }) {
   const [selled, setSelled] = useState(false);
 
   const cart = useCart();
 
   useEffect(() => {
-    let itemInCart = cart.findItem(item.id);
-    if (itemInCart) {
+    if (cart.isInCart(item.id)) {
       setSelled(true);
     }
   }, [cart, item.id]);

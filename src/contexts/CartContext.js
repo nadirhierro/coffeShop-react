@@ -5,7 +5,7 @@ const CartContext = createContext();
 export const useCart = () => useContext(CartContext);
 
 let initialState = undefined;
-let storageCart = JSON.parse(localStorage.getItem("cart"));
+let storageCart = JSON.parse(sessionStorage.getItem("cart"));
 if (storageCart) {
   initialState = storageCart;
 } else {
@@ -16,8 +16,12 @@ export default function CartProvider({ children }) {
   const [cart, setCart] = useState(initialState);
 
   useEffect(() => {
-    localStorage.setItem("cart", JSON.stringify(cart));
+    sessionStorage.setItem("cart", JSON.stringify(cart));
   }, [cart]);
+
+  const findItem = function (itemId) {
+    return cart.items.find((item) => item.id === itemId);
+  };
 
   const addItem = function (itemToAdd, quantityToAdd) {
     if (cart.items.some((item) => item.id === itemToAdd.id)) {
@@ -41,12 +45,12 @@ export default function CartProvider({ children }) {
   };
 
   const removeItem = function (itemId) {
-    let itemInCart = cart.items.find((item) => item.id === itemId);
+    let itemInCart = findItem(itemId);
     let itemQuantity = itemInCart.quantity;
     setCart({
       items: cart.items.filter((item) => item.id !== itemId),
       quantity: cart.quantity - itemQuantity,
-      total: cart.quantity - itemQuantity * itemInCart.price,
+      total: cart.total - itemQuantity * itemInCart.price,
     });
   };
 
@@ -55,7 +59,9 @@ export default function CartProvider({ children }) {
   };
 
   return (
-    <CartContext.Provider value={{ cart, addItem, removeItem, clear }}>
+    <CartContext.Provider
+      value={{ cart, findItem, addItem, removeItem, clear }}
+    >
       {children}
     </CartContext.Provider>
   );

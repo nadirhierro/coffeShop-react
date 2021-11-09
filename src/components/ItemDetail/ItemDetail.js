@@ -1,22 +1,33 @@
 import "./ItemDetail.scss";
 import ItemCount from "../ItemCount/ItemCount";
 import { useCart } from "../../contexts/CartContext";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import numberWithCommas from "../../js/numberWithCommas";
 
 export default function ItemDetail({ item }) {
-  const [choosed, setChoosed] = useState(false);
   const [selled, setSelled] = useState(false);
 
   const cart = useCart();
 
+  useEffect(() => {
+    let itemInCart = cart.findItem(item.id);
+    if (itemInCart) {
+      setSelled(true);
+    }
+  }, [cart, item.id]);
+
   const onAdd = function (quantity) {
     const vendido = cart.addItem(item, quantity);
-    setChoosed(true);
     if (vendido) {
       setSelled(true);
     }
+  };
+
+  const handleRemove = function (event) {
+    event.preventDefault();
+    cart.removeItem(item.id);
+    setSelled(false);
   };
 
   return (
@@ -40,14 +51,23 @@ export default function ItemDetail({ item }) {
         <span className="itemDetail__details__price">
           $ {numberWithCommas(item.price)}
         </span>
-        {!choosed ? (
+        {!selled ? (
           <ItemCount stock={item.stock} initial="1" onAdd={onAdd} />
-        ) : selled ? (
-          <Link to="/cart" className="btn itemDetail__finalizar">
-            Finalizar compra
-          </Link>
         ) : (
-          <h3 className="itemDetail__inCart">Ya tenías este producto!</h3>
+          <div className="itemDetail__selled">
+            <h3 className="itemDetail__selled__yetInCart">
+              ¡Producto en carrito!
+            </h3>
+            <Link to="/cart" className="btn itemDetail__selled__finalizar">
+              Finalizar compra
+            </Link>
+            <button
+              onClick={handleRemove}
+              className="btn itemDetail__selled__remove"
+            >
+              Quitar producto del carrito
+            </button>
+          </div>
         )}
       </div>
       <div className="col-12 d-flex justify-content-center p-2">

@@ -17,7 +17,7 @@ export default function ItemCount({ stock, initial, onAdd }) {
     }
   };
   const handleClick = function (event) {
-    event.stopPropagation();
+    event.preventDefault();
     onAdd(count);
   };
 

@@ -9,7 +9,7 @@ import CartProvider from "./contexts/CartContext";
 
 function App() {
   return (
-    <BrowserRouter basename={"coffeShop-react"}>
+    <BrowserRouter basename={"sincopado-react"}>
       <Navbar />
       <Hero />
       <CartProvider>

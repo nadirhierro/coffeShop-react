@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/sincopado-react/static/css/main.f1f63745.chunk.css",
-    "main.js": "/sincopado-react/static/js/main.b35830e0.chunk.js",
-    "main.js.map": "/sincopado-react/static/js/main.b35830e0.chunk.js.map",
+    "main.js": "/sincopado-react/static/js/main.67d3e9ad.chunk.js",
+    "main.js.map": "/sincopado-react/static/js/main.67d3e9ad.chunk.js.map",
     "runtime-main.js": "/sincopado-react/static/js/runtime-main.c4c0e601.js",
     "runtime-main.js.map": "/sincopado-react/static/js/runtime-main.c4c0e601.js.map",
     "static/js/2.e32f3d84.chunk.js": "/sincopado-react/static/js/2.e32f3d84.chunk.js",
@@ -87,6 +87,6 @@
     "static/js/runtime-main.c4c0e601.js",
     "static/js/2.e32f3d84.chunk.js",
     "static/css/main.f1f63745.chunk.css",
-    "static/js/main.b35830e0.chunk.js"
+    "static/js/main.67d3e9ad.chunk.js"
   ]
 }

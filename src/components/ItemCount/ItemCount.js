@@ -42,12 +42,13 @@ export default function ItemCount({ stock, initial, onAdd }) {
           onClick={handleClick}
           className="btn itemCount__addCart__button"
         >
-          Agregar {count} unidad/es al Carrito
+          Agregar {count} unidad{count > 1 ? "es" : ""} al Carrito
         </button>
       </div>
       <div className="itemCount__quantity">
         <span className="itemCount__quantity__stock">
-          Hay {stock} unidad/es disponibles
+          Hay {stock} unidad{stock > 1 ? "es" : ""} disponible
+          {stock > 1 ? "s" : ""}
         </span>
       </div>
     </div>

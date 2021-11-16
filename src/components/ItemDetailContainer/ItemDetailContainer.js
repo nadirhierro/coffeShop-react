@@ -2,6 +2,7 @@ import "./ItemDetailContainer.scss";
 import { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import ItemDetail from "../ItemDetail/ItemDetail";
+import Loader from "../Loader/Loader";
 
 // mi item empieza siendo undefined
 // empiezo primero haciendo fetch mi data, una vez la tengo, me fijo (getItem) si existe producto con el id del params
@@ -35,7 +36,7 @@ export default function ItemDetailContainer() {
       {item ? (
         <ItemDetail item={item} />
       ) : existe ? (
-        <h4 className="loader">Cargando...</h4>
+        <Loader />
       ) : (
         <div className="row">
           <div className="col-12 itemDetailContainer__error">

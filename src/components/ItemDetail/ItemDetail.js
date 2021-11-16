@@ -75,7 +75,7 @@ export default function ItemDetail({ item }) {
           </div>
         )}
       </div>
-      <div className="col-12 d-flex justify-content-center p-2">
+      <div className="col-12 d-flex justify-content-center pt-4">
         <Link to={"/"} className="btn itemDetail__volver">
           Volver a la tienda
         </Link>

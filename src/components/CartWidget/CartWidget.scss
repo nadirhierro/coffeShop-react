@@ -1,7 +1,21 @@
 .carritoIcon {
+  display: flex;
+  gap: 0.2rem;
   cursor: pointer;
   align-self: center;
   img {
     height: 2rem;
+  }
+  .carritoContador {
+    padding: 0 0.3rem;
+    font-size: 16px;
+    width: fit-content;
+    vertical-align: middle;
+    border-radius: 50%;
+    background-color: rgb(44, 46, 33);
+    color: rgb(169, 172, 131);
+    font-weight: bold;
+    text-align: center;
+    align-self: flex-end;
   }
 }

@@ -2,6 +2,7 @@ import "./ItemListContainer.scss";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import ItemList from "../ItemList/ItemList";
+import Loader from "../Loader/Loader";
 
 // mis productos a mostrar comienza siendo undefined
 // declaro las categorias en un array de strings
@@ -45,11 +46,7 @@ export default function ItemListContainer() {
       <>
         <div className="container-fluid itemListContainer">
           <div className="row justify-content-center">
-            {productos ? (
-              <ItemList items={productos} />
-            ) : (
-              <h4 className="loader">Cargando...</h4>
-            )}
+            {productos ? <ItemList items={productos} /> : <Loader />}
           </div>
         </div>
       </>

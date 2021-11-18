@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import ItemList from "../ItemList/ItemList";
 import Loader from "../Loader/Loader";
-import { getFirestore } from "../firebase";
+import { getFirestore } from "../../firebase";
 import { collection, query, where, getDocs } from "firebase/firestore";
 
 // mis productos a mostrar comienza siendo undefined

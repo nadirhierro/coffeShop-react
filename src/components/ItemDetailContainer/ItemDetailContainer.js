@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import ItemDetail from "../ItemDetail/ItemDetail";
 import Loader from "../Loader/Loader";
-import { getFirestore } from "../firebase";
+import { getFirestore } from "../../firebase";
 import { doc, getDoc } from "firebase/firestore";
 
 // mi item empieza siendo undefined

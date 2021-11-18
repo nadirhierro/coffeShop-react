@@ -3,6 +3,8 @@ import { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import ItemDetail from "../ItemDetail/ItemDetail";
 import Loader from "../Loader/Loader";
+import { getFirestore } from "../firebase";
+import { doc, getDoc } from "firebase/firestore";
 
 // mi item empieza siendo undefined
 // empiezo primero haciendo fetch mi data, una vez la tengo, me fijo (getItem) si existe producto con el id del params
@@ -18,17 +20,15 @@ export default function ItemDetailContainer() {
   let { itemId } = useParams();
 
   useEffect(() => {
-    let enApi = itemId - 1;
-    fetch(`https://api.npoint.io/8a23ab7dd9406e0115d4/${enApi}`)
-      .then((response) => response.json())
-      .then((data) => {
-        setItem(data);
-        setExiste(1);
-      })
-      .catch((error) => {
+    const db = getFirestore();
+    const itemRef = doc(db, "items", `${itemId - 1}`);
+    getDoc(itemRef).then((snapshot) => {
+      if (snapshot.exists()) {
+        setItem(snapshot.data());
+      } else {
         setExiste(0);
-        console.log(`Error: ${error}`);
-      });
+      }
+    });
   }, [itemId]);
 
   return (

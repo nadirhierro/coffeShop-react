@@ -3,6 +3,8 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import ItemList from "../ItemList/ItemList";
 import Loader from "../Loader/Loader";
+import { getFirestore } from "../firebase";
+import { collection, query, where, getDocs } from "firebase/firestore";
 
 // mis productos a mostrar comienza siendo undefined
 // declaro las categorias en un array de strings
@@ -28,20 +30,24 @@ export default function ItemListContainer() {
 
   useEffect(() => {
     setProductos(undefined);
-    fetch("https://api.npoint.io/8a23ab7dd9406e0115d4/")
-      .then((response) => response.json())
-      .then((data) => {
-        if (categoryId !== undefined && categoryId !== "destacados") {
-          setProductos(
-            data.filter((producto) => producto.category === categoryId)
-          );
-        } else {
-          setProductos(data.filter((producto) => producto.destacado === "si"));
-        }
-      });
+    const db = getFirestore();
+    let q = undefined;
+    if (categoryId === "destacados" || !categoryId) {
+      q = query(collection(db, "items"), where("destacado", "==", "si"));
+    } else {
+      q = query(
+        collection(db, "items"),
+        where("category", "==", `${categoryId}`)
+      );
+    }
+    getDocs(q)
+      .then((snapshot) => {
+        setProductos(snapshot.docs.map((doc) => doc.data()));
+      })
+      .catch((err) => console.log(err));
   }, [categoryId]);
 
-  if (categorias.indexOf(categoryId) >= 0 || categoryId === undefined) {
+  if (categorias.includes(categoryId) || categoryId === undefined) {
     return (
       <>
         <div className="container-fluid itemListContainer">

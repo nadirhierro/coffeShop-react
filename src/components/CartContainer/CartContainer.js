@@ -5,6 +5,9 @@ import { useCart } from "../../contexts/CartContext";
 import CartItem from "../../components/CartItem/CartItem";
 import numberWithCommas from "../../js/numberWithCommas";
 
+// CartContainer se encarga de recuperar el carrito (productos, total, remove) y mapear los CartItem
+//
+
 export default function CartContainer() {
   const [products, setProducts] = useState(undefined);
   const cart = useCart();
@@ -26,8 +29,8 @@ export default function CartContainer() {
       {products ? (
         <>
           <div className="row justify-content-center tituloFinalizar">
-            <h2 class="col-12 text-center">¡Últimos pasos!</h2>
-            <h4 class="col-12 text-center">Chequeá tu carrito...</h4>
+            <h2 className="col-12 text-center">¡Últimos pasos!</h2>
+            <h4 className="col-12 text-center">Chequeá tu carrito...</h4>
           </div>
           <div className="row justify-content-center">
             <table className="table">

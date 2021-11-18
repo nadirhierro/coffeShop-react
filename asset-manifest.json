@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/sincopado-react/static/css/main.f1f63745.chunk.css",
-    "main.js": "/sincopado-react/static/js/main.67d3e9ad.chunk.js",
-    "main.js.map": "/sincopado-react/static/js/main.67d3e9ad.chunk.js.map",
-    "runtime-main.js": "/sincopado-react/static/js/runtime-main.c4c0e601.js",
-    "runtime-main.js.map": "/sincopado-react/static/js/runtime-main.c4c0e601.js.map",
-    "static/js/2.e32f3d84.chunk.js": "/sincopado-react/static/js/2.e32f3d84.chunk.js",
-    "static/js/2.e32f3d84.chunk.js.map": "/sincopado-react/static/js/2.e32f3d84.chunk.js.map",
-    "static/js/3.0839afc4.chunk.js": "/sincopado-react/static/js/3.0839afc4.chunk.js",
-    "static/js/3.0839afc4.chunk.js.map": "/sincopado-react/static/js/3.0839afc4.chunk.js.map",
+    "main.js": "/sincopado-react/static/js/main.0d054813.chunk.js",
+    "main.js.map": "/sincopado-react/static/js/main.0d054813.chunk.js.map",
+    "runtime-main.js": "/sincopado-react/static/js/runtime-main.c4c5ea2c.js",
+    "runtime-main.js.map": "/sincopado-react/static/js/runtime-main.c4c5ea2c.js.map",
+    "static/js/2.7415d88e.chunk.js": "/sincopado-react/static/js/2.7415d88e.chunk.js",
+    "static/js/2.7415d88e.chunk.js.map": "/sincopado-react/static/js/2.7415d88e.chunk.js.map",
+    "static/js/3.bb06d194.chunk.js": "/sincopado-react/static/js/3.bb06d194.chunk.js",
+    "static/js/3.bb06d194.chunk.js.map": "/sincopado-react/static/js/3.bb06d194.chunk.js.map",
     "index.html": "/sincopado-react/index.html",
     "static/css/main.f1f63745.chunk.css.map": "/sincopado-react/static/css/main.f1f63745.chunk.css.map",
-    "static/js/2.e32f3d84.chunk.js.LICENSE.txt": "/sincopado-react/static/js/2.e32f3d84.chunk.js.LICENSE.txt",
+    "static/js/2.7415d88e.chunk.js.LICENSE.txt": "/sincopado-react/static/js/2.7415d88e.chunk.js.LICENSE.txt",
     "static/media/12.jpg": "/sincopado-react/static/media/12.fac161f0.jpg",
     "static/media/13.jpg": "/sincopado-react/static/media/13.9d48c39a.jpg",
     "static/media/14.jpg": "/sincopado-react/static/media/14.02a4097a.jpg",
@@ -84,9 +84,9 @@
     "static/media/logo_white_large.3e060c32.png": "/sincopado-react/static/media/logo_white_large.3e060c32.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.c4c0e601.js",
-    "static/js/2.e32f3d84.chunk.js",
+    "static/js/runtime-main.c4c5ea2c.js",
+    "static/js/2.7415d88e.chunk.js",
     "static/css/main.f1f63745.chunk.css",
-    "static/js/main.67d3e9ad.chunk.js"
+    "static/js/main.0d054813.chunk.js"
   ]
 }

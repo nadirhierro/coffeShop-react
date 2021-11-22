@@ -1,0 +1,30 @@
+@import "../../assets/styles/_abstracts.scss";
+@import "../../assets/styles/_variables.scss";
+
+.barraBusqueda {
+  @include padding(2rem);
+  @include flexColumn(inherit, unset, center);
+  @include fondoVerde;
+  &__buscador {
+    @include flex(1rem, center, inherit);
+    @include sizes(80%, auto);
+    @media (min-width: 992px) {
+      & {
+        @include sizes(50%, auto);
+      }
+    }
+    &__input {
+      width: 20rem;
+      height: 2.5rem;
+      &:focus {
+        @include boxShadowInput;
+      }
+      &:focus-visible {
+        outline: gold;
+      }
+    }
+    &__btn {
+      @include fondoAmarillo;
+    }
+  }
+}

@@ -1,45 +1,36 @@
+@import "../../assets/styles/_abstracts.scss";
+@import "../../assets/styles/_variables.scss";
+
 .item {
-  padding-bottom: 2rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  @include padding-y(0, 2rem);
+  @include flexColumn(0, space-between, unset);
   &__image {
     position: relative;
-    padding-top: 100%;
+    @include padding-y(100%, 0);
     img {
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      right: 0;
-      left: 0;
-      margin: auto;
-      max-width: 100%;
-      max-height: 100%;
+      @include fotos;
     }
   }
   &__title {
     text-align: center;
-    font-size: 20px;
+    font-size: 1.4rem;
   }
   &__price {
-    padding: 1rem 0;
+    @include padding-y(1rem, 1rem);
     text-align: center;
-    font-size: 24px;
+    font-size: 1.6rem;
   }
   &__verProducto {
-    padding: 0 1rem;
+    @include padding-x(1rem, 1rem);
     align-self: center;
     width: fit-content;
     text-align: center;
     text-decoration: none;
     font-weight: bold;
     font-size: 18px;
-    background-color: rgb(73, 76, 54);
-    color: black;
-    border-radius: 0.25rem;
+    @include fondoVerde;
     &:hover {
-      background-color: rgb(24, 25, 18) !important;
-      color: rgb(169, 172, 131) !important;
+      @include fondoAmarillo;
       transform: skewX(-15deg);
     }
   }

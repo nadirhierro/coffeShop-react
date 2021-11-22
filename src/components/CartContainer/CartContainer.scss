@@ -1,3 +1,6 @@
+@import "../../assets/styles/_abstracts.scss";
+@import "../../assets/styles/_variables.scss";
+
 .tituloFinalizar {
   padding-top: 1rem;
   background-color: rgb(73, 76, 54);
@@ -40,15 +43,13 @@
 .sinProductos {
   padding-bottom: 2rem;
   &__volver {
+    @include fondoVerde;
+    @include margin-y(1rem, 1rem);
     width: fit-content;
     align-self: center;
-    text-align: center;
     text-decoration: none;
     font-weight: bold;
     font-size: 18px;
-    background-color: rgb(73, 76, 54);
-    color: black;
-    border-radius: 0.25rem;
     &:hover {
       background-color: rgb(24, 25, 18) !important;
       color: rgb(169, 172, 131) !important;

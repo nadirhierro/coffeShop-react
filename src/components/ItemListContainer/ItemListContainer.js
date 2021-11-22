@@ -5,6 +5,7 @@ import ItemList from "../ItemList/ItemList";
 import Loader from "../Loader/Loader";
 import { getFirestore } from "../../firebase";
 import { collection, query, where, getDocs } from "firebase/firestore";
+import SearchBar from "../SearchBar/SearchBar";
 
 // mis productos a mostrar comienza siendo undefined
 // declaro las categorias en un array de strings
@@ -17,7 +18,9 @@ import { collection, query, where, getDocs } from "firebase/firestore";
 // si categoryId no es una categoría entonces renderizo que la página no fue encontrada
 
 export default function ItemListContainer() {
-  const [productos, setProductos] = useState(undefined);
+  const [products, setProducts] = useState(undefined);
+  const [loading, setLoading] = useState(true);
+
   const categorias = [
     "destacados",
     "guitarras",
@@ -29,7 +32,8 @@ export default function ItemListContainer() {
   let { categoryId } = useParams();
 
   useEffect(() => {
-    setProductos(undefined);
+    setProducts(undefined);
+    setLoading(true);
     const db = getFirestore();
     let q = undefined;
     if (categoryId === "destacados" || !categoryId) {
@@ -42,20 +46,20 @@ export default function ItemListContainer() {
     }
     getDocs(q)
       .then((snapshot) => {
-        setProductos(snapshot.docs.map((doc) => doc.data()));
+        setProducts(snapshot.docs.map((doc) => doc.data()));
+        setLoading(false);
       })
       .catch((err) => console.log(err));
   }, [categoryId]);
 
   if (categorias.includes(categoryId) || categoryId === undefined) {
     return (
-      <>
-        <div className="container-fluid itemListContainer">
-          <div className="row justify-content-center">
-            {productos ? <ItemList items={productos} /> : <Loader />}
-          </div>
+      <div className="container-fluid itemListContainer">
+        <SearchBar />
+        <div className="row justify-content-center itemListContainer__items">
+          {loading ? <Loader /> : <ItemList items={products} />}
         </div>
-      </>
+      </div>
     );
   } else {
     return <h4 className="text-center p-5">¡Página no encontrada!</h4>;

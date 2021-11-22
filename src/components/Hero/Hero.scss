@@ -1,11 +1,8 @@
+@import "../../assets/styles/_abstracts.scss";
+@import "../../assets/styles/_variables.scss";
+
 .hero {
-  font-family: "Open Sans", sans-serif;
-  padding: 7rem 4rem;
-  background-size: cover;
-  background-position: top;
-  background-color: rgba(0, 0, 0, 0.8);
-  background-blend-mode: color;
-  color: rgb(169, 172, 131);
+  @include fondoHero;
   .row {
     justify-content: flex-start;
     align-items: center;
@@ -18,9 +15,7 @@
       }
     }
     .cajaHeroLogo {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+      @include flexColumn(0, unset, center);
       .heroLema {
         font-weight: bold;
         align-self: flex-end;

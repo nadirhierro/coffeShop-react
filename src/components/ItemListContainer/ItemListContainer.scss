@@ -1,4 +1,9 @@
+@import "../../assets/styles/_abstracts.scss";
+@import "../../assets/styles/_variables.scss";
+
 .itemListContainer {
-  font-family: "Open Sans", sans-serif;
-  padding-top: 4rem;
+  font-family: $nunito;
+  &__items {
+    padding-top: 2rem;
+  }
 }

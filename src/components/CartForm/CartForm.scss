@@ -1,0 +1,22 @@
+@import "../../assets/styles/_abstracts.scss";
+@import "../../assets/styles/_variables.scss";
+
+.cartForm {
+  font-family: $nunito;
+  @include padding-y(2rem, 2rem);
+  &__form {
+    @include flexColumn(0.5rem, center, center);
+    label,
+    input {
+      width: 80% !important;
+      @media (min-width: 1400px) {
+        width: 50%;
+      }
+    }
+    &__btn {
+      width: fit-content;
+      @include margin-y(1rem, 0);
+      @include fondoVerde;
+    }
+  }
+}

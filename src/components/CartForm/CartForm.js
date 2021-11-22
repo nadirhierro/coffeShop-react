@@ -17,11 +17,11 @@ export default function CartForm({ sendOrder }) {
   };
 
   return (
-    <div className="row justify-content-center form">
+    <div className="row justify-content-center cartForm">
       <h2 className="col-12 text-center">
         Por favor, completá con tus datos para que te enviemos tu orden
       </h2>
-      <form className="col-12 d-flex flex-column w-50">
+      <form className="col-12 col-lg-6 cartForm__form">
         <label htmlFor="name">Nombre:</label>
         <input
           type="text"
@@ -49,7 +49,7 @@ export default function CartForm({ sendOrder }) {
         ></input>
         <button
           disabled={!(buyer.name && buyer.phone && buyer.email)}
-          className="btn"
+          className="btn cartForm__form__btn"
           onClick={handleSubmit}
         >
           Finalizar compra

@@ -1,16 +1,16 @@
+@import "../../assets/styles/_abstracts.scss";
+@import "../../assets/styles/_variables.scss";
+
 .footer {
-  font-family: "Open Sans", sans-serif;
-  background-color: rgb(73, 76, 54);
-  color: rgb(169, 172, 131);
+  font-family: $nunito;
+  @include fondoVerde;
 }
 .footerFlex {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 1rem 0 2rem;
+  @include flex(0, center, center);
+  @include padding-y(1rem, 2rem);
 }
 .footerLogo {
-  padding: 0 0 1rem;
+  @include padding-y(0, 1rem);
   width: 20rem;
 }
 .copyright {

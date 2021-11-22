@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/sincopado-react/static/css/main.676a1cd7.chunk.css",
-    "main.js": "/sincopado-react/static/js/main.3a940404.chunk.js",
-    "main.js.map": "/sincopado-react/static/js/main.3a940404.chunk.js.map",
-    "runtime-main.js": "/sincopado-react/static/js/runtime-main.f08c30bd.js",
-    "runtime-main.js.map": "/sincopado-react/static/js/runtime-main.f08c30bd.js.map",
-    "static/js/2.4a347767.chunk.js": "/sincopado-react/static/js/2.4a347767.chunk.js",
-    "static/js/2.4a347767.chunk.js.map": "/sincopado-react/static/js/2.4a347767.chunk.js.map",
-    "static/js/3.324f16b1.chunk.js": "/sincopado-react/static/js/3.324f16b1.chunk.js",
-    "static/js/3.324f16b1.chunk.js.map": "/sincopado-react/static/js/3.324f16b1.chunk.js.map",
+    "main.css": "/sincopado-react/static/css/main.76e294e9.chunk.css",
+    "main.js": "/sincopado-react/static/js/main.730ed7eb.chunk.js",
+    "main.js.map": "/sincopado-react/static/js/main.730ed7eb.chunk.js.map",
+    "runtime-main.js": "/sincopado-react/static/js/runtime-main.6e2047ad.js",
+    "runtime-main.js.map": "/sincopado-react/static/js/runtime-main.6e2047ad.js.map",
+    "static/js/2.553ca7b5.chunk.js": "/sincopado-react/static/js/2.553ca7b5.chunk.js",
+    "static/js/2.553ca7b5.chunk.js.map": "/sincopado-react/static/js/2.553ca7b5.chunk.js.map",
+    "static/js/3.d2fdadc2.chunk.js": "/sincopado-react/static/js/3.d2fdadc2.chunk.js",
+    "static/js/3.d2fdadc2.chunk.js.map": "/sincopado-react/static/js/3.d2fdadc2.chunk.js.map",
     "index.html": "/sincopado-react/index.html",
-    "static/css/main.676a1cd7.chunk.css.map": "/sincopado-react/static/css/main.676a1cd7.chunk.css.map",
-    "static/js/2.4a347767.chunk.js.LICENSE.txt": "/sincopado-react/static/js/2.4a347767.chunk.js.LICENSE.txt",
+    "static/css/main.76e294e9.chunk.css.map": "/sincopado-react/static/css/main.76e294e9.chunk.css.map",
+    "static/js/2.553ca7b5.chunk.js.LICENSE.txt": "/sincopado-react/static/js/2.553ca7b5.chunk.js.LICENSE.txt",
     "static/media/08aINklR69S6RLJ5lXQl.jpg": "/sincopado-react/static/media/08aINklR69S6RLJ5lXQl.78f3b09f.jpg",
     "static/media/19uZ90chogedtHdOWpi0.jpg": "/sincopado-react/static/media/19uZ90chogedtHdOWpi0.82f3ba41.jpg",
     "static/media/3EEdXGystqn1LpHCq8kK.jpg": "/sincopado-react/static/media/3EEdXGystqn1LpHCq8kK.a50286ec.jpg",
@@ -84,9 +84,9 @@
     "static/media/zlWJ90fPq4OfjLokyV14.jpg": "/sincopado-react/static/media/zlWJ90fPq4OfjLokyV14.0cd40968.jpg"
   },
   "entrypoints": [
-    "static/js/runtime-main.f08c30bd.js",
-    "static/js/2.4a347767.chunk.js",
-    "static/css/main.676a1cd7.chunk.css",
-    "static/js/main.3a940404.chunk.js"
+    "static/js/runtime-main.6e2047ad.js",
+    "static/js/2.553ca7b5.chunk.js",
+    "static/css/main.76e294e9.chunk.css",
+    "static/js/main.730ed7eb.chunk.js"
   ]
 }

@@ -1,8 +1,11 @@
 import "./CartContainer.scss";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { getFirestore } from "../../firebase";
+import { collection, addDoc } from "firebase/firestore";
 import { useCart } from "../../contexts/CartContext";
 import CartItem from "../../components/CartItem/CartItem";
+import CartForm from "../../components/CartForm/CartForm";
 import numberWithCommas from "../../js/numberWithCommas";
 
 // CartContainer se encarga de recuperar el carrito (productos, total, remove) y mapear los CartItem
@@ -10,6 +13,9 @@ import numberWithCommas from "../../js/numberWithCommas";
 
 export default function CartContainer() {
   const [products, setProducts] = useState(undefined);
+  const [buyer, setBuyer] = useState(null);
+  const [orderId, setOrderId] = useState(null);
+
   const cart = useCart();
 
   useEffect(() => {
@@ -22,6 +28,21 @@ export default function CartContainer() {
 
   const remove = function (itemId) {
     cart.removeItem(itemId);
+  };
+
+  const sendOrder = function (buyer) {
+    let order = {
+      buyer: buyer,
+      items: cart.cart.items,
+      total: cart.cart.total,
+    };
+    const db = getFirestore();
+    const orderCollection = collection(db, "orders");
+    addDoc(orderCollection, order).then(({ id }) => {
+      setOrderId(id);
+      setBuyer(buyer);
+      cart.clear();
+    });
   };
 
   return (
@@ -61,7 +82,19 @@ export default function CartContainer() {
               </tbody>
             </table>
           </div>
+          <CartForm sendOrder={sendOrder} />
         </>
+      ) : orderId ? (
+        <div className="row align-content-center flex-column orderSent">
+          <h1 className="col-6 text-center">¡Tu compra fue exitosa!</h1>
+          <h2 className="col-6 text-center">Tu número de orden es {orderId}</h2>
+          <p className="col-6 text-center">
+            {buyer.name} te llegará un correo a tu dirección {buyer.email}
+          </p>
+          <Link to={"./"} className="col-6 text-center sinProductos__volver">
+            Volver a la tienda
+          </Link>
+        </div>
       ) : (
         <div className="row align-content-center flex-column sinProductos">
           <h1 className="col-6 text-center">¡No hay productos!</h1>

@@ -21,7 +21,7 @@ export default function ItemDetailContainer() {
 
   useEffect(() => {
     const db = getFirestore();
-    const itemRef = doc(db, "items", `${itemId - 1}`);
+    const itemRef = doc(db, "items", `${itemId}`);
     getDoc(itemRef).then((snapshot) => {
       if (snapshot.exists()) {
         setItem(snapshot.data());

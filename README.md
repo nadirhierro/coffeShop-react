@@ -1,3 +1,17 @@
+# Sincopado react-app
+
+Proyecto final para el curso de ReactJs de Coderhouse
+
+Profesor: Agustín Molés
+Tutores: David Lescano, Mate Hernández
+
+Se trata de un e-commerce de productos musicales. Los productos se pueden buscar por categorías, desde el navBar,
+o bien a través de la SearchBar, que busca por título del producto sin importar el orden en el que se pongan las palabras.
+Es decir, si el título del producto contiene las palabras puestas en la barra de búsqueda, entonces ese producto se mostrará
+en SearchContainer.
+
+Actualmente, estoy viendo cómo incorporar filtros por marcas y precios que se generen automáticamente.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

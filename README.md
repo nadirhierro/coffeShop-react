@@ -12,6 +12,8 @@ en SearchContainer.
 
 Actualmente, estoy viendo cómo incorporar filtros por marcas y precios que se generen automáticamente.
 
+Link al [GIF de muestra](https://drive.google.com/file/d/1VEr9J-Z8LWFhKpcFzTnDWO-xwD3rd8-W/view?usp=sharing)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

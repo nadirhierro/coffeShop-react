@@ -18,10 +18,14 @@
         transform: skewX(-10deg);
         background-color: rgb(24, 25, 18) !important;
         transition: 0.4s;
+        cursor: pointer;
       }
       &:focus {
         color: rgb(169, 172, 131);
       }
+    }
+    span {
+      padding: 0.5rem;
     }
   }
 }

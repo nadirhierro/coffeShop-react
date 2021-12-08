@@ -1,0 +1,37 @@
+@import "../src/assets/styles/_abstracts";
+@import "../src/assets/styles/_variables";
+
+.ubicacion {
+  .modal-body {
+    @include flexColumn(0.5rem, center, center);
+    p {
+      text-align: center;
+    }
+    .transporte {
+      margin: 0;
+    }
+    .mapa {
+      padding-top: 1rem;
+      width: 90%;
+      height: 300px;
+    }
+  }
+}
+
+.contacto {
+  .elemento {
+    @include padding-y(0.5rem, 0.5rem);
+    @include flex(0.5rem, unset, center);
+    img {
+      height: 2rem;
+    }
+    p {
+      margin: 0;
+      vertical-align: center;
+    }
+    a {
+      text-decoration: none;
+      color: $amarillo;
+    }
+  }
+}

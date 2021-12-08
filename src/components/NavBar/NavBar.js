@@ -25,7 +25,7 @@ export default function NavBar() {
           <div className="navbar-nav navi__links">
             <div className="dropdown">
               <button
-                className="btn dropdown__btn"
+                className="btn rounded-pill dropdown__btn"
                 type="button"
                 id="dropdownMenuButton1"
                 data-bs-toggle="dropdown"
@@ -57,12 +57,27 @@ export default function NavBar() {
                 </Link>
               </div>
             </div>
-            <a className="nav-link navi__links__link btn" href="/#">
-              Sobre Nosotros
-            </a>
-            <a className="nav-link navi__links__link btn" href="/#">
+            <span
+              class="navi__links__link rounded-pill"
+              data-bs-toggle="modal"
+              data-bs-target="#nosotros"
+            >
+              Nosotros
+            </span>
+            <span
+              class="navi__links__link rounded-pill"
+              data-bs-toggle="modal"
+              data-bs-target="#ubicacion"
+            >
+              Ubicación
+            </span>
+            <span
+              class="navi__links__link rounded-pill"
+              data-bs-toggle="modal"
+              data-bs-target="#contacto"
+            >
               Contacto
-            </a>
+            </span>
             <CartWidget />
           </div>
         </div>
